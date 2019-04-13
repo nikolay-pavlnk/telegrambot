@@ -9,7 +9,6 @@ APP_NAME = 'telegrambotfortest'
 server = flask.Flask(__name__)
 bot = telebot.TeleBot(TOKEN)
  
- 
 @server.route('/' + TOKEN, methods=['POST'])
 def get_message():
     bot.process_new_updates([types.Update.de_json(
