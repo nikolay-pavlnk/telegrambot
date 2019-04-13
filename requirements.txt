@@ -1,3 +1,6 @@
 flask
 pytelegrambotapi
 gunicorn
+re
+nltk
+sklearn

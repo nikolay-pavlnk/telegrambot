@@ -1,10 +1,9 @@
 import os
-
+from config import *
 from flask import Flask, request
-
+from base_model import *
 import telebot
 
-TOKEN = '824073635:AAFokg_1q7Wyj8VvkBgXm7SSfJ8kfXr7SJs'
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
@@ -16,7 +15,13 @@ def start(message):
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):
-	bot.reply_to(message, message.text)
+	greetings = [True if word.lower() in GREETING_INPUTS else False for word in message.text.split()]
+    
+	if True in greetings:
+		bot.send_message(message.chat.id, np.random.choice(GREETING_RESPONSES))
+	else:
+		bot.send_message(message.chat.id, get_response(message.text))
+		corpus.remove(message.text)
 
 
 @server.route('/' + TOKEN, methods=['POST'])
