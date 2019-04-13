@@ -1,6 +1,6 @@
 flask
 pytelegrambotapi
 gunicorn
-re
+regex
 nltk
-sklearn
+scikit-learn
