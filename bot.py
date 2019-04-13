@@ -1,7 +1,6 @@
 import flask
 from telebot import types
 import telebot
-from config import *
 import os
 
 TOKEN = '824073635:AAFokg_1q7Wyj8VvkBgXm7SSfJ8kfXr7SJs'
