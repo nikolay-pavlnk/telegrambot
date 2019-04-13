@@ -2,6 +2,7 @@ import os
 from config import *
 from flask import Flask, request
 from base_model import *
+import numpy as np
 import telebot
 
 bot = telebot.TeleBot(TOKEN)
