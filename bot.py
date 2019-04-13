@@ -1,10 +1,10 @@
 import flask
-from telebot import types
+from telebot import types, TeleBot
 from config import *
 import os
  
 server = flask.Flask(__name__)
-bot = telebot.TeleBot(TOKEN)
+bot = TeleBot(TOKEN)
  
  
 @server.route('/' + TOKEN, methods=['POST'])
